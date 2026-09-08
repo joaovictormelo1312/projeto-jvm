@@ -1,5 +1,26 @@
 const WHATSAPP_NUMBER = '5586994832401';
 
+const PROJECTS = [
+  {
+    title: 'Dra. Teresa Marly',
+    category: 'Landing Page • Odontologia',
+    status: 'Projeto desenvolvido',
+    description: 'Landing page desenvolvida para apresentar a profissional, seus tratamentos e facilitar o contato e agendamento pelo WhatsApp.',
+    image: '', // TODO: substituir pela captura de tela real do projeto.
+    url: 'https://drateresamarly.vercel.app/',
+    tone: 'teresa',
+  },
+  {
+    title: 'Onne Chips',
+    category: 'Loja Virtual • Alimentos',
+    status: 'Projeto desenvolvido',
+    description: 'Loja virtual desenvolvida para apresentar a marca e seus produtos, permitindo que o cliente monte seu pedido de forma simples e intuitiva.',
+    image: '', // TODO: substituir pela captura de tela real do projeto.
+    url: 'https://onnechips.vercel.app/',
+    tone: 'onne',
+  },
+];
+
 const PLANS = {
   'landing-essencial': {
     name: 'Landing Page Essencial',
@@ -46,6 +67,29 @@ const interestTitle = document.querySelector('#interest-title');
 const interestPrice = document.querySelector('#interest-price');
 const interestFeatures = document.querySelector('#interest-features');
 const planButtons = document.querySelectorAll('[data-plan]');
+const projectList = document.querySelector('#project-list');
+
+if (projectList) {
+  projectList.innerHTML = PROJECTS.map((project, index) => {
+    const previewTitle = project.tone === 'teresa' ? 'Cuidado que<br><i>acolhe.</i>' : 'Sabor que<br><i>conecta.</i>';
+    const previewLabel = project.tone === 'teresa' ? 'dra.teresa / online' : 'onnechips / loja';
+    const previewContent = project.image
+      ? `<img src="${project.image}" alt="Captura de tela do projeto ${project.title}" />`
+      : `<div class="preview-browser" aria-hidden="true"><div class="preview-browser-top"><span></span><span></span><span></span><small>${previewLabel}</small></div><div class="preview-browser-body"><span class="preview-kicker">${project.category.split(' • ')[0].toUpperCase()}</span><strong>${previewTitle}</strong><span class="preview-line"></span></div></div>`;
+
+    return `<article class="project-feature project-${project.tone}">
+      <a class="project-preview project-preview-${project.tone}" href="${project.url}" target="_blank" rel="noopener noreferrer" aria-label="Ver projeto ${project.title} em nova aba">
+        ${previewContent}
+        ${project.image ? '' : '<span class="preview-placeholder">Prévia temporária · substituir em PROJECTS.image</span>'}
+      </a>
+      <div class="project-feature-copy">
+        <div class="project-feature-heading"><div><span class="project-status">${project.status}</span><h3>${project.title}</h3><p class="project-category">${project.category}</p></div><span class="project-count">0${index + 1}</span></div>
+        <p>${project.description}</p>
+        <a class="text-link project-link" href="${project.url}" target="_blank" rel="noopener noreferrer">Ver projeto <span>↗</span></a>
+      </div>
+    </article>`;
+  }).join('');
+}
 
 function openInterestModal(planId, trigger) {
   const plan = PLANS[planId];
@@ -113,6 +157,11 @@ document.querySelectorAll('[data-contact]').forEach((link) => {
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
 });
+
+const chooserUrl = createWhatsAppUrl('Olá, João! Vi os planos da JVM, mas ainda não sei qual solução é a mais indicada para o meu negócio. Gostaria de conversar com você.');
+document.querySelector('[data-chooser]')?.setAttribute('href', chooserUrl);
+document.querySelector('[data-chooser]')?.setAttribute('target', '_blank');
+document.querySelector('[data-chooser]')?.setAttribute('rel', 'noopener noreferrer');
 
 const modal = document.querySelector('.terms-modal');
 document.querySelector('[data-modal-open]')?.addEventListener('click', () => modal?.showModal());
