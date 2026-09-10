@@ -54,6 +54,18 @@
 @media(max-width:520px){.hero{min-height:0;padding-top:34px}.hero-scene{inset:-4% -62%}.hero-jv-mark-main{width:145vw;right:-24vw;top:8%;opacity:.18}.hero-jv-mark-depth{width:185vw;left:-78vw;bottom:-10%;opacity:.02}.scene-window{left:22%;width:135%;height:64%;top:4%;transform:perspective(800px) rotateY(-8deg) rotateZ(-2deg)}.scene-window-top{height:27px;padding:0 10px}.scene-window-top span{width:5px;height:5px}.scene-window-top small{font-size:6px}.scene-window-body{height:calc(100% - 27px);padding:18px 24px}.scene-nav{gap:12px;font-size:8px}.scene-nav b{font-size:14px}.scene-rule{margin-top:15px}.scene-copy{left:12%;top:25%;gap:10px}.scene-copy small{font-size:7px}.scene-copy strong{font-size:34px}.scene-copy em{width:100px}.scene-grid-lines{height:70px;right:10%;bottom:10%}.scene-grid-lines i{width:10px}.hero-overlay{background:linear-gradient(180deg,rgba(5,10,16,.83),rgba(5,10,16,.54) 32%,rgba(5,10,16,.96) 86%),linear-gradient(90deg,rgba(5,10,16,.8),rgba(5,10,16,.3))}.hero:before{top:14%;left:-22%;width:100vw}.hero:after{right:-25%;bottom:17%;width:88vw}.hero .hero-art{opacity:.72}}
 @media(prefers-reduced-motion:reduce){.hero-jv-mark-main{animation:none;transform:translate3d(0,0,0) scale(1.08) rotate(0deg)}.hero:before,.hero:after{box-shadow:none}.site-header.hero-at-top{transition:none}}
 
+/* Final hero refinement: keep the card readable and give mobile its own JV framing. */
+.hero-art .browser-front h3{color:#111318}
+.hero-art .browser-front .art-line{background:#111318}
+.hero-art .browser-front .art-footer strong{color:#111318}
+.hero-art .browser-front .browser-top small{color:#334155}
+@keyframes hero-jv-drift-mobile{0%,100%{transform:translate3d(2%,1%,0) scale(1.02) rotate(-.5deg)}25%{transform:translate3d(0,0,0) scale(1.04) rotate(0deg)}50%{transform:translate3d(-2%,-1%,0) scale(1.06) rotate(.5deg)}75%{transform:translate3d(-.5%,.5%,0) scale(1.04) rotate(0deg)}}
+@media(max-width:900px){.hero-copy{order:1}.hero-art{order:2;opacity:1}.hero-jv-mark-main{width:126vw;right:-12vw;top:18%;opacity:.14;animation-name:hero-jv-drift-mobile}.hero-jv-mark-depth{width:165vw;left:-52vw;bottom:-20%;opacity:.018}}
+@media(max-width:520px){.hero-grid{gap:4px}.hero-art{height:280px;margin:-18px -4px 0}.hero-jv-mark-main{width:110vw;left:25%;right:auto;top:-2%;opacity:.24;filter:brightness(1.15) contrast(1.1)}.hero-jv-mark-depth{width:155vw;left:-48vw;bottom:-12%;opacity:.016}}
+@media(max-width:390px){.hero-note{margin-top:28px}.hero-art{margin-top:0}.hero-art .browser-body{padding:16px 20px}.hero-art .art-kicker{margin-bottom:18px}.hero-art .art-footer{margin-top:35px}}
+@media(max-width:375px){.hero-art .browser-body{padding:8px 18px}.hero-art .art-kicker{margin-bottom:8px}.hero-art .art-footer{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.hero-jv-mark-main{transform:translate3d(0,0,0) scale(1.04) rotate(0deg)}}
+
 /* JV cool editorial palette */
 .brand-logo{display:block;width:34px;height:34px;object-fit:contain;flex:0 0 auto;filter:brightness(.28) contrast(1.25) saturate(.65)}
 .site-footer .brand-logo{filter:none}
