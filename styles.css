@@ -107,7 +107,7 @@
 @media(prefers-reduced-motion:reduce){.hero-jv-motion-frame .hero-jv-mark-main{animation:none;transform:translate3d(0,0,0) scale(1.04)}}
 /* Hero accent line: a restrained pulse and an elongated light sweep. */
 @keyframes hero-line-pulse{0%,100%{opacity:.42;box-shadow:0 0 8px rgba(22,139,255,.24)}50%{opacity:.95;box-shadow:0 0 8px rgba(22,139,255,.58),0 0 18px rgba(22,139,255,.22)}}
-@keyframes hero-line-pulse-mobile{0%,100%{opacity:.48;box-shadow:0 0 7px rgba(22,139,255,.28)}50%{opacity:.9;box-shadow:0 0 8px rgba(22,139,255,.55),0 0 15px rgba(22,139,255,.2)}}
+@keyframes hero-line-pulse-mobile{0%,100%{opacity:.58;box-shadow:0 0 7px rgba(22,139,255,.32)}50%{opacity:.96;box-shadow:0 0 8px rgba(22,139,255,.6),0 0 15px rgba(22,139,255,.22)}}
 @keyframes hero-line-sheen{0%,15%{background-position:220% 0}55%,70%{background-position:-40% 0}100%{background-position:-40% 0}}
 .hero:after{background:linear-gradient(90deg,transparent 0%,rgba(22,139,255,.78) 40%,rgba(226,245,255,.98) 50%,rgba(22,139,255,.78) 60%,transparent 100%);background-size:240% 100%;animation:hero-line-pulse 4.2s ease-in-out infinite,hero-line-sheen 6.2s ease-in-out infinite}
 @media(max-width:520px){.hero:after{animation-name:hero-line-pulse-mobile,hero-line-sheen}}
@@ -126,6 +126,20 @@
 }
 @media(max-width:520px) and (prefers-reduced-motion:reduce){
   .hero:after{animation:none;background:linear-gradient(90deg,transparent,var(--jv-blue),transparent);background-size:100% 100%;box-shadow:none;opacity:.7}
+}
+
+/* Final mobile visibility pass: keep editorial labels readable without changing the composition. */
+@media(max-width:520px){
+  .hero .hero-art{opacity:.86}
+  .hero .hero-note{color:#b5c4d3}
+  .hero-art .art-tag{color:#d2e0ed;text-shadow:0 0 8px rgba(22,139,255,.16)}
+  .hero-art .tag-top strong{color:#e2edf6}
+  .hero-art .tag-bottom{color:#e6f1f9}
+  .hero-art .tag-bottom span{color:#b8c9d8}
+  .hero-art .browser-front .art-footer{position:absolute;left:clamp(18px,5vw,26px);right:clamp(18px,5vw,26px);bottom:clamp(16px,5vw,22px);margin:0;padding-right:0}
+}
+@media(max-width:520px) and (prefers-reduced-motion:reduce){
+  .hero .hero-art{opacity:.86}
 }
 .browser-body{background:linear-gradient(135deg,#fff,#e9eff5) !important}
 .back-lines b{background:#c8d4e1 !important}
