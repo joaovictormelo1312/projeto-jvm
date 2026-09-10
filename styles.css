@@ -55,7 +55,7 @@
 @media(prefers-reduced-motion:reduce){.hero-jv-mark-main{animation:none;transform:translate3d(0,0,0) scale(1.08) rotate(0deg)}.hero:before,.hero:after{box-shadow:none}.site-header.hero-at-top{transition:none}}
 
 /* Final hero refinement: keep the card readable and give mobile its own JV framing. */
-.hero-art .browser-front h3{color:#111318}
+.hero-art .browser-front h3{color:#111318}.hero-art .browser-front h3 i{color:var(--jv-blue)}
 .hero-art .browser-front .art-line{background:#111318}
 .hero-art .browser-front .art-footer strong{color:#111318}
 .hero-art .browser-front .browser-top small{color:#334155}
@@ -88,6 +88,16 @@
 .process{background:#e9eef4 !important}
 .comparison{background:#eef2f6 !important}
 .browser-card,.product-card,.commerce-box{background:#fff !important}
+
+/* Mobile hero motion: the frame owns responsive positioning; the mark owns animation. */
+.hero-jv-motion-frame{position:absolute;z-index:1;display:block;width:78vw;min-width:760px;right:-8vw;top:-10%;transform-origin:center;overflow:visible;will-change:transform}
+.hero-jv-motion-frame .hero-jv-mark-main{position:relative;top:auto;right:auto;width:100%;min-width:0;transform:translate3d(4%,2%,0) scale(1.04) rotate(-1deg);animation:hero-jv-drift 12s ease-in-out infinite}
+.cta-arrow{display:block;width:16px;height:16px;flex:0 0 16px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.text-link .cta-arrow{display:inline-block;vertical-align:-4px;margin-left:7px}
+@keyframes hero-jv-drift-mobile-final{0%,100%{transform:translate3d(3%,1%,0) scale(1.02)}25%{transform:translate3d(0,0,0) scale(1.05)}50%{transform:translate3d(-4%,-2%,0) scale(1.08)}75%{transform:translate3d(-1%,0,0) scale(1.05)}}
+@media(max-width:900px){.hero-jv-motion-frame{width:126vw;min-width:0;right:-12vw;top:18%}.hero-jv-motion-frame .hero-jv-mark-main{animation:hero-jv-drift-mobile-final 11s ease-in-out infinite}}
+@media(max-width:520px){.hero-jv-motion-frame{width:110vw;left:25%;right:auto;top:-2%}}
+@media(prefers-reduced-motion:reduce){.hero-jv-motion-frame .hero-jv-mark-main{animation:none;transform:translate3d(0,0,0) scale(1.04)}}
 .browser-body{background:linear-gradient(135deg,#fff,#e9eff5) !important}
 .back-lines b{background:#c8d4e1 !important}
 .mini-window{background:#dce8f3 !important;box-shadow:12px 15px 0 #e8f0f7 !important}
