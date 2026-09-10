@@ -16,7 +16,7 @@ Potential clients of an independent web developer: companies, professionals and 
 
 ## Product Purpose
 
-This is a commercial presentation page for JVM / João Victor Melo, designed to help a prospective client quickly understand the available web solutions, scope, prices, process, timing and how to start a project.
+This is a commercial presentation page for JV / João Victor, designed to help a prospective client quickly understand the available web solutions, scope, prices, process, timing and how to start a project.
 
 ## Positioning
 
@@ -32,7 +32,7 @@ The page must be responsive, accessible and usable without a backend. WhatsApp, 
 
 ## Brand Commitments
 
-The brand is JVM, with João Victor Melo / Desenvolvimento Web as the descriptor. The visual direction is sophisticated, minimal, premium, editorial and spacious, using an off-white, near-black, muted gold and light gray palette.
+The brand is JV, with João Victor / Desenvolvimento Web as the descriptor. The visual direction is sophisticated, minimal, premium, editorial and spacious, using an off-white, near-black, muted gold and light gray palette.
 
 ## Evidence on Hand
 

@@ -128,7 +128,7 @@ interestForm?.addEventListener('submit', (event) => {
   const segment = formData.get('segment')?.trim();
   const need = formData.get('need')?.trim();
   const lines = [
-    `Olá, João! Vim pelo site da JVM e tenho interesse ${selectedPlan.isQuote ? 'no' : 'na'} ${selectedPlan.name} ${selectedPlan.isQuote ? ', a partir de R$ 3.500' : 'de ' + selectedPlan.priceLabel}.`,
+    `Olá, João! Vim pelo site da JV e tenho interesse ${selectedPlan.isQuote ? 'no' : 'na'} ${selectedPlan.name} ${selectedPlan.isQuote ? ', a partir de R$ 3.500' : 'de ' + selectedPlan.priceLabel}.`,
     projectName ? `Empresa: ${projectName}` : '',
     segment ? `Segmento: ${segment}` : '',
     need ? `Sobre o projeto:\\n${need}` : '',
@@ -151,14 +151,14 @@ mainNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', 
   mainNav.classList.remove('open');
 }));
 
-const genericWhatsAppUrl = createWhatsAppUrl('Olá, João! Vi seu trabalho através do site da JVM e gostaria de conversar sobre um projeto.');
+const genericWhatsAppUrl = createWhatsAppUrl('Olá, João! Vi seu trabalho através do site da JV e gostaria de conversar sobre um projeto.');
 document.querySelectorAll('[data-contact]').forEach((link) => {
   link.href = genericWhatsAppUrl;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
 });
 
-const chooserUrl = createWhatsAppUrl('Olá, João! Vi os planos da JVM, mas ainda não sei qual solução é a mais indicada para o meu negócio. Gostaria de conversar com você.');
+const chooserUrl = createWhatsAppUrl('Olá, João! Vi os planos da JV, mas ainda não sei qual solução é a mais indicada para o meu negócio. Gostaria de conversar com você.');
 document.querySelector('[data-chooser]')?.setAttribute('href', chooserUrl);
 document.querySelector('[data-chooser]')?.setAttribute('target', '_blank');
 document.querySelector('[data-chooser]')?.setAttribute('rel', 'noopener noreferrer');
