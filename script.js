@@ -24,31 +24,31 @@ const PROJECTS = [
 const PLANS = {
   'landing-essencial': {
     name: 'Landing Page Essencial',
-    priceLabel: 'R$ 350',
+    priceLabel: 'R$ 500',
     cta: 'Tenho interesse',
     features: ['Landing page profissional', 'Design responsivo', 'Integração com WhatsApp', 'Organização do conteúdo', 'Seções estratégicas', 'Publicação', '1 mês de manutenção após a entrega'],
   },
   'landing-plus': {
     name: 'Landing Page Plus',
-    priceLabel: 'R$ 600',
+    priceLabel: 'R$ 800',
     cta: 'Quero este plano',
     features: ['Tudo da Landing Page Essencial', '3 meses de manutenção', '3 meses de hospedagem incluída', 'Atualizações de textos, preços, imagens, links e contatos', 'Pequenos ajustes visuais'],
   },
   'loja-start': {
     name: 'Loja Virtual Start',
-    priceLabel: 'R$ 800',
+    priceLabel: 'R$ 1.200',
     cta: 'Tenho interesse',
     features: ['Catálogo de produtos', 'Página individual dos produtos', 'Imagens, descrições e preços', 'Carrinho e quantidades', 'Resumo do pedido', 'Finalização pelo WhatsApp', 'Design responsivo'],
   },
   'loja-pro': {
     name: 'Loja Virtual Pro',
-    priceLabel: 'R$ 1.500',
+    priceLabel: 'R$ 2.000',
     cta: 'Quero este plano',
     features: ['Tudo da Loja Virtual Start', 'Cadastro de clientes', 'Login e autenticação', 'Banco de dados', 'Área do cliente', 'Dados vinculados à conta', 'Carrinho vinculado ao usuário', 'Finalização pelo WhatsApp'],
   },
   'ecommerce-completo': {
     name: 'E-commerce Completo',
-    priceLabel: 'A partir de R$ 2.500',
+    priceLabel: 'A partir de R$ 3.500',
     cta: 'Solicitar orçamento',
     features: ['Site institucional + loja', 'Catálogo e páginas de produtos', 'Carrinho', 'Cadastro e login', 'Banco de dados e área do cliente', 'Checkout', 'Pagamento online, PIX e cartão', 'Integração com provedor de pagamento', 'Estrutura personalizada'],
     isQuote: true,
@@ -128,7 +128,7 @@ interestForm?.addEventListener('submit', (event) => {
   const segment = formData.get('segment')?.trim();
   const need = formData.get('need')?.trim();
   const lines = [
-    `Olá, João! Vim pelo site da JVM e tenho interesse ${selectedPlan.isQuote ? 'no' : 'na'} ${selectedPlan.name} ${selectedPlan.isQuote ? ', a partir de R$ 2.500' : 'de ' + selectedPlan.priceLabel}.`,
+    `Olá, João! Vim pelo site da JVM e tenho interesse ${selectedPlan.isQuote ? 'no' : 'na'} ${selectedPlan.name} ${selectedPlan.isQuote ? ', a partir de R$ 3.500' : 'de ' + selectedPlan.priceLabel}.`,
     projectName ? `Empresa: ${projectName}` : '',
     segment ? `Segmento: ${segment}` : '',
     need ? `Sobre o projeto:\\n${need}` : '',
