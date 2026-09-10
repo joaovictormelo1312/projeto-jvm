@@ -85,7 +85,7 @@ if (projectList) {
       <div class="project-feature-copy">
         <div class="project-feature-heading"><div><span class="project-status">${project.status}</span><h3>${project.title}</h3><p class="project-category">${project.category}</p></div><span class="project-count">0${index + 1}</span></div>
         <p>${project.description}</p>
-        <a class="text-link project-link" href="${project.url}" target="_blank" rel="noopener noreferrer">Ver projeto <span>↗</span></a>
+        <a class="text-link project-link" href="${project.url}" target="_blank" rel="noopener noreferrer">Ver projeto <svg class="icon-arrow icon-arrow-diagonal" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" /></svg></a>
       </div>
     </article>`;
   }).join('');
