@@ -107,11 +107,26 @@
 @media(prefers-reduced-motion:reduce){.hero-jv-motion-frame .hero-jv-mark-main{animation:none;transform:translate3d(0,0,0) scale(1.04)}}
 /* Hero accent line: a restrained pulse and an elongated light sweep. */
 @keyframes hero-line-pulse{0%,100%{opacity:.42;box-shadow:0 0 8px rgba(22,139,255,.24)}50%{opacity:.95;box-shadow:0 0 8px rgba(22,139,255,.58),0 0 18px rgba(22,139,255,.22)}}
-@keyframes hero-line-pulse-mobile{0%,100%{opacity:.38;box-shadow:0 0 6px rgba(22,139,255,.2)}50%{opacity:.78;box-shadow:0 0 6px rgba(22,139,255,.42),0 0 12px rgba(22,139,255,.16)}}
+@keyframes hero-line-pulse-mobile{0%,100%{opacity:.48;box-shadow:0 0 7px rgba(22,139,255,.28)}50%{opacity:.9;box-shadow:0 0 8px rgba(22,139,255,.55),0 0 15px rgba(22,139,255,.2)}}
 @keyframes hero-line-sheen{0%,15%{background-position:220% 0}55%,70%{background-position:-40% 0}100%{background-position:-40% 0}}
 .hero:after{background:linear-gradient(90deg,transparent 0%,rgba(22,139,255,.78) 40%,rgba(226,245,255,.98) 50%,rgba(22,139,255,.78) 60%,transparent 100%);background-size:240% 100%;animation:hero-line-pulse 4.2s ease-in-out infinite,hero-line-sheen 6.2s ease-in-out infinite}
 @media(max-width:520px){.hero:after{animation-name:hero-line-pulse-mobile,hero-line-sheen}}
 @media(prefers-reduced-motion:reduce){.hero:after{animation:none;background:linear-gradient(90deg,transparent,var(--jv-blue),transparent);background-size:100% 100%;box-shadow:none;opacity:.7}}
+
+/* Final mobile hero framing: preserve the approved composition with more lateral breathing room. */
+@media(max-width:520px){
+  .hero-art .browser-front{width:clamp(240px,63vw,270px);height:clamp(224px,58vw,250px);transform:translate(-3px,12px) rotate(-5deg)}
+  .hero-art .browser-front .browser-body{padding:clamp(18px,5vw,23px) clamp(20px,5.5vw,26px)}
+  .hero-art .browser-back{width:clamp(205px,54vw,235px);height:clamp(166px,42vw,180px);transform:translate(clamp(38px,13vw,58px),clamp(-52px,-14vw,-45px)) rotate(8deg)}
+  .hero-art .art-footer{margin-top:clamp(34px,11vw,48px);padding-right:4px}
+}
+@media(max-width:390px){
+  .hero-art .browser-front{width:clamp(238px,63vw,246px);height:clamp(222px,58vw,230px)}
+  .hero-art .browser-back{width:clamp(202px,53vw,208px);height:clamp(164px,42vw,170px);transform:translate(clamp(34px,11vw,42px),-46px) rotate(8deg)}
+}
+@media(max-width:520px) and (prefers-reduced-motion:reduce){
+  .hero:after{animation:none;background:linear-gradient(90deg,transparent,var(--jv-blue),transparent);background-size:100% 100%;box-shadow:none;opacity:.7}
+}
 .browser-body{background:linear-gradient(135deg,#fff,#e9eff5) !important}
 .back-lines b{background:#c8d4e1 !important}
 .mini-window{background:#dce8f3 !important;box-shadow:12px 15px 0 #e8f0f7 !important}
