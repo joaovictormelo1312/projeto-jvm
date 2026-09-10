@@ -140,6 +140,16 @@ interestForm?.addEventListener('submit', (event) => {
 
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
+const siteHeader = document.querySelector('.site-header');
+const heroSection = document.querySelector('.hero');
+if (siteHeader && heroSection && 'IntersectionObserver' in window) {
+  const headerObserver = new IntersectionObserver(([entry]) => {
+    siteHeader.classList.toggle('hero-at-top', entry.isIntersecting);
+  }, { threshold: 0.12 });
+  headerObserver.observe(heroSection);
+} else {
+  siteHeader?.classList.add('hero-at-top');
+}
 menuToggle?.addEventListener('click', () => {
   const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
   menuToggle.setAttribute('aria-expanded', String(!isOpen));
