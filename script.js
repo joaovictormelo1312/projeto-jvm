@@ -22,17 +22,11 @@ const PROJECTS = [
 ];
 
 const PLANS = {
-  'landing-essencial': {
-    name: 'Landing Page Essencial',
+  'landing-page': {
+    name: 'Landing Page',
     priceLabel: 'R$ 500',
     cta: 'Tenho interesse',
-    features: ['Landing page profissional', 'Design responsivo', 'Integração com WhatsApp', 'Organização do conteúdo', 'Seções estratégicas', 'Publicação', '1 mês de manutenção após a entrega'],
-  },
-  'landing-plus': {
-    name: 'Landing Page Plus',
-    priceLabel: 'R$ 800',
-    cta: 'Quero este plano',
-    features: ['Tudo da Landing Page Essencial', '3 meses de manutenção', '3 meses de hospedagem incluída', 'Atualizações de textos, preços, imagens, links e contatos', 'Pequenos ajustes visuais'],
+    features: ['Landing page personalizada', 'Design responsivo', 'Integração com WhatsApp', 'Seções estratégicas', 'Publicação e configuração assistida', '1 mês de manutenção'],
   },
   'loja-start': {
     name: 'Loja Virtual Start',
@@ -50,7 +44,7 @@ const PLANS = {
     name: 'E-commerce Completo',
     priceLabel: 'A partir de R$ 3.500',
     cta: 'Solicitar orçamento',
-    features: ['Site institucional + loja', 'Catálogo e páginas de produtos', 'Carrinho', 'Cadastro e login', 'Banco de dados e área do cliente', 'Checkout', 'Pagamento online, PIX e cartão', 'Integração com provedor de pagamento', 'Estrutura personalizada'],
+    features: ['Site institucional + loja', 'Catálogo e páginas de produtos', 'Carrinho', 'Cadastro e login', 'Banco de dados e área do cliente', 'Checkout', 'Pagamento online, PIX e cartão', 'Integração com provedor de pagamento', 'Estrutura personalizada', '1º ano de domínio personalizado incluído*'],
     isQuote: true,
   },
 };
