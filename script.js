@@ -30,7 +30,10 @@ const PLANS = {
   },
   'loja-start': {
     name: 'Loja Virtual Start',
-    priceLabel: 'R$ 1.200',
+    priceLabel: 'R$ 800 — R$ 1.200',
+    modalPriceLabel: 'Investimento estimado: R$800 a R$1.200',
+    modalNote: 'O valor final é definido conforme a estrutura e as necessidades do projeto.',
+    whatsAppIntro: 'Olá, João! Tenho interesse na Loja Virtual Start (investimento entre R$800 e R$1.200) e gostaria de conversar sobre o meu projeto.',
     cta: 'Tenho interesse',
     features: ['Catálogo de produtos', 'Página individual dos produtos', 'Imagens, descrições e preços', 'Carrinho e quantidades', 'Resumo do pedido', 'Finalização pelo WhatsApp', 'Design responsivo'],
   },
@@ -60,6 +63,8 @@ const interestForm = document.querySelector('#interest-form');
 const interestTitle = document.querySelector('#interest-title');
 const interestPrice = document.querySelector('#interest-price');
 const interestFeatures = document.querySelector('#interest-features');
+const interestNote = document.querySelector('.interest-note');
+const defaultInterestNote = interestNote?.textContent || '';
 const planButtons = document.querySelectorAll('[data-plan]');
 const projectList = document.querySelector('#project-list');
 
@@ -91,7 +96,9 @@ function openInterestModal(planId, trigger) {
   selectedPlan = plan;
   opener = trigger;
   interestTitle.textContent = plan.name;
-  interestPrice.textContent = plan.priceLabel;
+  interestPrice.textContent = plan.modalPriceLabel || plan.priceLabel;
+  interestPrice.classList.toggle('range-price', Boolean(plan.modalPriceLabel));
+  if (interestNote) interestNote.textContent = [plan.modalNote, defaultInterestNote].filter(Boolean).join(' ');
   interestFeatures.innerHTML = plan.features.map((feature) => `<li>${feature}</li>`).join('');
   interestModal.showModal();
   document.querySelector('#project-name')?.focus();
@@ -122,7 +129,7 @@ interestForm?.addEventListener('submit', (event) => {
   const segment = formData.get('segment')?.trim();
   const need = formData.get('need')?.trim();
   const lines = [
-    `Olá, João! Vim pelo site da JV e tenho interesse ${selectedPlan.isQuote ? 'no' : 'na'} ${selectedPlan.name} ${selectedPlan.isQuote ? ', a partir de R$ 3.500' : 'de ' + selectedPlan.priceLabel}.`,
+    selectedPlan.whatsAppIntro || `Olá, João! Vim pelo site da JV e tenho interesse ${selectedPlan.isQuote ? 'no' : 'na'} ${selectedPlan.name} ${selectedPlan.isQuote ? ', a partir de R$ 3.500' : 'de ' + selectedPlan.priceLabel}.`,
     projectName ? `Empresa: ${projectName}` : '',
     segment ? `Segmento: ${segment}` : '',
     need ? `Sobre o projeto:\\n${need}` : '',
